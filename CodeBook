@@ -1,0 +1,23 @@
+This CodeBook describes the variables and the transformations utilized in the run_analysis.R script.
+
+First the files are downloaded and combined as per instruction 1:
+train.subj, train.data, train.label, test.subj, test.data, test.label contains the downloaded files.
+all.subj is the combination of train.subj and test.subj
+all.label is the combination of train.label and test.label
+all.data is the combination of train.data and test.data
+
+Secondly, the mean and standard deviation indices are extracted from features:
+features variable contains the downloaded features
+and from that I extracted only the mean and std names and saved the indices in a variable called ind.feat.
+then I subset these data from all.data and named it sub.data, which contains the 66 variables and 10299 observations.
+
+Thirdly, I renamed some of the column names in the sub.data variable so that it is reader-friendly.
+I've also imported the activity labels and saved it as activity.label variable, which is also renamed accordingly.
+Then I created a new.label variable which matches the activity.label and all.label variables according to the coding scheme.
+
+In the 4th step, I merged all the variable into a final.data variable which contains 68 variables and 10299 observations.
+
+5th step:
+I created a tidy_data variable which contains the splitted final.data into columns respectively and had the means
+applied to them.
+Finally, the tidy_data variable is written out to a text file called tidy_data.txt as the end product of this project.
